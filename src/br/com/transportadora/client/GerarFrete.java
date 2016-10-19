@@ -26,7 +26,7 @@ public class GerarFrete {
 		remessa.setFrete(frete);
 
 		Client client = ClientBuilder.newClient();
-		client.register(new HttpBasicAuthFilter("Maria", "123"));
+		client.register(new HttpBasicAuthFilter("cliente", "2468"));
 		WebTarget webTarget = client.target("http://35.160.30.34:8080/Transportadora").path("frete").path("gerar");
 		Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_XML);
 		Response response = invocationBuilder.post(Entity.entity(remessa, MediaType.APPLICATION_XML));
